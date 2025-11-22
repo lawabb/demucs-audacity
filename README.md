@@ -26,4 +26,5 @@ To run
 - Audacity should start with the four tracks
 - Press play etc to use
 - After closing the same files can be relaunched by right clicking the demucs.lof file that has been added,
-  and select open with ... Audacity
+  and select
+  > Open with > Audacity
