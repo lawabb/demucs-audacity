@@ -1,0 +1,49 @@
+#!/bin/bash
+"exec" "~/.pyenv/versions/3.11.6/bin/python3.11" "$0" "$@"
+
+import sys
+import os
+import subprocess
+import demucs.separate
+
+print ('Python ' + sys.version.split('(')[0])
+
+# location of demucs
+mydemucs = '/home/lawrie/.pyenv/shims/demucs'
+# Where the output files are going to be saved
+outfiles = '/home/lawrie/Desktop/'
+
+if len(sys.argv) < 1:
+    print("No file location provided")
+    sys.exit()
+
+source_audio_file = os.path.basename(sys.argv[1])
+print(source_audio_file)
+audio_name, ext = os.path.splitext(source_audio_file)
+
+lof_dest = os.path.join(outfiles, 'htdemucs/%s' % audio_name, 'demucs.lof' )
+dest_dir = os.path.join(outfiles, 'htdemucs/%s' % audio_name)
+
+if len(sys.argv) > 1:
+    source_audio_file = sys.argv[1]
+    demucs.separate.main([("%s" % source_audio_file), "-o", ("%s" % outfiles) ])
+    #subprocess.call("%s -d cpu '%s' -o '%s'" % (mydemucs, source_audio_file, outfiles), shell=True)
+else:
+    print("No file location provided")
+    sys.exit()
+
+#sys.exit()
+# This is the typical list of files for Audacity to open from demucs ouput
+# It is copied into same directory as audio files
+lof = '''
+file "vocals.wav"
+file "other.wav"
+file "bass.wav"
+file "drums.wav"
+'''
+
+open(lof_dest, "w").writelines(lof)
+
+os.chdir(dest_dir)
+subprocess.run(["audacity", "demucs.lof"])
+
