@@ -9,8 +9,6 @@ import demucs.separate
 print ('Python ' + sys.version.split('(')[0])
 print ("**** Ensure there are no open Audacity sessions or the new one won't start. ****")
 
-# location of demucs
-mydemucs = '/home/lawrie/.pyenv/shims/demucs'
 # Where the output files are going to be saved
 outfiles = '/home/lawrie/Desktop/'
 
@@ -28,12 +26,10 @@ dest_dir = os.path.join(outfiles, 'htdemucs/%s' % audio_name)
 if len(sys.argv) > 1:
     source_audio_file = sys.argv[1]
     demucs.separate.main([("%s" % source_audio_file), "-o", ("%s" % outfiles) ])
-    #subprocess.call("%s -d cpu '%s' -o '%s'" % (mydemucs, source_audio_file, outfiles), shell=True)
 else:
     print("No file location provided")
     sys.exit()
 
-#sys.exit()
 # This is the typical list of files for Audacity to open from demucs ouput
 # It is copied into same directory as audio files
 lof = '''
