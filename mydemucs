@@ -7,6 +7,7 @@ import subprocess
 import demucs.separate
 
 print ('Python ' + sys.version.split('(')[0])
+print ("**** Ensure there are no open Audacity sessions or the new one won't start. ****")
 
 # location of demucs
 mydemucs = '/home/lawrie/.pyenv/shims/demucs'
