@@ -1,5 +1,6 @@
 The code here is what I am using to demucs an audio file selected from my
-file manager then open the tracks in Audactiy.
+file manager then open the tracks in Audactiy. (See the simple alternate ways
+at the bottom)
 
 My setup has/requires
 - Ubuntu 24.04 KDE using Dolphin file manager (using right click menu to launch process)
@@ -8,7 +9,7 @@ My setup has/requires
   for this as requires numpy not current numpy2 etc
 - Audacity audio application
 
-Initail setup is manual.
+Initial setup is manual.
 - Once pyenv and a suitable python version is installed, install demucs in that environment
 - Copy demucs_me.desktop file to ~/.local/share/kservices5/ServiceMenus/
   Edit the line starting with Exec for correct username. Make it executable.
@@ -28,3 +29,10 @@ To run
 - After closing the same files can be relaunched by right clicking the demucs.lof file that has been added,
   and select
   > Open with > Audacity
+
+Alternativly don't do any of this, instead
+- Run demucs
+- Select all required files and drag into an open audacity session
+- OR
+- Copy the demucs.lof file into the same directory as the new files then open Audacity and select
+  > File > open > demucs.lof
