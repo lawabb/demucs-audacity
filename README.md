@@ -1,6 +1,6 @@
-A simple script that used demucs to split an audio file then load those parts into Audacity.  
-An audio file  can be selected from Dolpin file manager context menu, demucs process sarts,
-and when finished, the split parts areopened as separate tracks in Audactiy.
+A simple script that uses demucs to split an audio file then loads those parts into Audacity.  
+An audio file  can be selected from Dolpin file manager context menu which starts the demucs process.
+When finished, the split parts are opened as separate tracks in Audactiy.
 (Also see the simple alternate ways at the bottom)
 
 Tested setup has/requires
