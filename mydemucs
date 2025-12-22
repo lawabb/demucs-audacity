@@ -42,5 +42,6 @@ file "drums.wav"
 open(lof_dest, "w").writelines(lof)
 
 os.chdir(dest_dir)
-subprocess.run(["audacity", "demucs.lof"])
+subprocess.Popen(["audacity", "demucs.lof"], start_new_session=True)
+sys.exit(0)
 
