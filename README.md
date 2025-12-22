@@ -1,8 +1,9 @@
-The code here is what I am using to demucs an audio file selected from my
-file manager then open the tracks in Audactiy. (See the simple alternate ways
-at the bottom)
+A simple script that used demucs to split an audio file then load those parts into Audacity.  
+An audio file  can be selected from Dolpin file manager context menu, demucs process sarts,
+and when finished, the split parts areopened as separate tracks in Audactiy.
+(Also see the simple alternate ways at the bottom)
 
-My setup has/requires
+Tested setup has/requires
 - Ubuntu 24.04 KDE using Dolphin file manager (using right click menu to launch process)
 - An install of demucs https://github.com/facebookresearch/demucs/tree/main
 - Pyenv to separate python environments. Recommend using a discreet pyenv environment
@@ -12,11 +13,11 @@ My setup has/requires
 Initial setup is manual.
 - Once pyenv and a suitable python version is installed, install demucs in that environment
 - Copy demucs_me.desktop file to ~/.local/share/kservices5/ServiceMenus/
-  Edit the line starting with Exec for correct username. Make it executable.
+- Edit the line starting with Exec for correct username. Make it executable.
    (a restart may be required to make it visible)
-- Copy the mydemucs file into a location in youre path. Eg mine is ~/.local/bin 
-  Edit the mydemucs file. Enter correct pyenv info at top, and edit the required outfile location.
-  make it executable. 
+- Copy the mydemucs file into a location in your path. Eg  ~/.local/bin 
+- Edit the mydemucs file. Enter correct pyenv info at top, and edit the required outfile location.
+- Make it executable. 
 
 To run 
 - Select an audio file by right clicking the file in Dolphin
